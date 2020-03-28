@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <clstl/string.h>
-
 namespace clogg {
     
     class FileWriter {
