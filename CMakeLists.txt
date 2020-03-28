@@ -20,4 +20,4 @@ set_target_properties(
 )
 
 target_include_directories(clogg PUBLIC include)
-target_link_libraries(clogg clstl)
+# target_link_libraries(clogg clstl)
