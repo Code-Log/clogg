@@ -13,3 +13,7 @@
 ## 2020-03-28 -- v0.0.4
 
  * Same as v0.0.2
+
+## 2020-03-28 -- v0.0.5
+
+ * Removed CLSTL from executable linking requirements.
