@@ -17,3 +17,7 @@
 ## 2020-03-28 -- v0.0.5
 
  * Removed CLSTL from executable linking requirements.
+
+## 2020-06-13 -- v0.0.6
+
+ * Added callbacks so other functions can listen in on the logs.
