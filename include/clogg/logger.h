@@ -4,6 +4,7 @@
 #pragma once
 
 #include <vector>
+#include <functional>
 
 enum LogLevel {
 
@@ -24,6 +25,7 @@ namespace clogg {
         int m_LogLevel = 0;
         std::vector<const char*> m_LogLines;
         static Logger s_Instance;
+        std::vector<std::function<void(int, const char*)>> m_Callbacks;
 
     public:
         Logger(const Logger&) = delete;
@@ -31,6 +33,8 @@ namespace clogg {
         void logString(const char* msg);
         void logString(int logLevel, const char* msg);
         void logFormat(int logLevel, const char* fMsg, ...);
+
+        void addLogListener(std::function<void(int, const char*)> func);
 
         static Logger& getLogger();
         static const char* getLogLevelString(int logLevel);

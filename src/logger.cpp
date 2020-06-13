@@ -34,6 +34,14 @@ namespace clogg {
         std::ostream& out_stream = (logLevel >= LogLevel::ERR) ? std::cerr : std::cout;
         out_stream << temp_buff;
 
+        for (std::function<void(int, const char*)> func : m_Callbacks) {
+            func(logLevel, buff);
+        }
+
+    }
+
+    void Logger::addLogListener(std::function<void(int, const char*)> func) { 
+        m_Callbacks.push_back(func);
     }
 
     const char* Logger::getLogLevelString(int logLevel) {
